@@ -191,7 +191,7 @@
 }
 
 .corporate-section-title {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: 3.5rem;
   font-weight: 900;
   color: #1a1a1a;
   text-align: center;
@@ -272,9 +272,24 @@
   .corporate-content-box {
     padding: 2.5rem 1.5rem;
   }
+  .corporate-section-title {
+    font-size:2rem
+  }
 
   .corporate-content-text {
     font-size: 1.05rem;
     line-height: 1.8;
+  }
+}
+@media (max-width: 576px) {
+  /* CSS here applies to small mobile screens only */
+    .corporate-section-title {
+    font-size:1.5rem
+  }
+
+  .corporate-content-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    text-align: justify;
   }
 }

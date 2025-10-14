@@ -3,458 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modern Corporate Sections - Bootstrap</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <title>Services - 3D + Scroll Animation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+
   <style>
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* Hero Section */
-    .corporate-hero-section {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background-image: 
-        linear-gradient(270deg, rgba(192, 0, 0, 0.7), rgba(255, 107, 107, 0.7), rgba(238, 90, 111, 0.7), rgba(192, 0, 0, 0.7), rgba(139, 0, 0, 0.7)),
-        url('YOUR_IMAGE_URL_HERE');
-      background-size: 400% 400%, cover;
-      background-position: 0% 50%, center;
-      background-repeat: no-repeat;
-      animation: corporateGradientMove 15s ease infinite;
-    }
-
-    @keyframes corporateGradientMove {
-      0% { background-position: 0% 50%, center; }
-      50% { background-position: 100% 50%, center; }
-      100% { background-position: 0% 50%, center; }
-    }
-
-    .corporate-hero-section::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at 30% 40%, rgba(192, 0, 0, 0.1) 0%, transparent 50%),
-                  radial-gradient(circle at 70% 60%, rgba(192, 0, 0, 0.08) 0%, transparent 50%);
-      filter: blur(60px);
-      animation: corporateBgFloat 20s ease-in-out infinite;
-      z-index: 1;
-    }
-
-    @keyframes corporateBgFloat {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(5%, 5%) scale(1.1); }
-    }
-
-    .corporate-hero-wrapper {
-      position: relative;
-      z-index: 10;
-    }
-
-    .corporate-main-heading {
-      font-size: clamp(3.5rem, 10vw, 6rem);
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      text-transform: uppercase;
-    }
-
-    .corporate-accent-line {
-      width: 60px;
-      height: 4px;
-      background: #ffffff;
-      margin: 2rem auto;
-    }
-
-    .corporate-tagline {
-      font-size: clamp(1.1rem, 2vw, 1.3rem);
-      color: rgba(255, 255, 255, 0.95);
-      font-weight: 400;
-      line-height: 1.6;
-    }
-
-    .corporate-stat-card {
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      padding: 2rem 1.5rem;
-      transition: all 0.3s ease;
-    }
-
-    .corporate-stat-card:hover {
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.25);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .corporate-stat-value {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #ffffff;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    .corporate-stat-text {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.9);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .corporate-cta-btn {
-      background: #ffffff;
-      color: #c00000;
-      font-weight: 600;
-      padding: 1rem 2.5rem;
-      border: none;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .corporate-cta-btn:hover {
-      background: #c00000;
-      color: #ffffff;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    }
-
-    .corporate-scroll-indicator {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: corporateBounce 2s infinite;
-      z-index: 10;
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 2rem;
-    }
-
-    @keyframes corporateBounce {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(10px); }
-    }
-
-    /* Staffing Solutions Section */
-    .corporate-solutions-section {
-      position: relative;
-      padding: 8rem 0;
-      background: #ffffff;
-      overflow: hidden;
-    }
-
-    .corporate-solutions-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, 
-        rgba(192, 0, 0, 0.03) 0%, 
-        transparent 25%,
-        rgba(192, 0, 0, 0.02) 50%,
-        transparent 75%,
-        rgba(192, 0, 0, 0.03) 100%);
-      background-size: 200% 200%;
-      animation: corporateSolutionsBg 20s ease infinite;
-    }
-
-    @keyframes corporateSolutionsBg {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
-
-    .corporate-solutions-section::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        radial-gradient(circle at 20% 30%, rgba(192, 0, 0, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(192, 0, 0, 0.03) 0%, transparent 40%);
-      animation: corporatePulseEffect 10s ease-in-out infinite;
-    }
-
-    @keyframes corporatePulseEffect {
-      0%, 100% { opacity: 0.5; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.05); }
-    }
-
-    .corporate-section-title {
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      font-weight: 900;
-      color: #1a1a1a;
-      text-align: center;
-      margin-bottom: 1rem;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      text-transform: uppercase;
-      position: relative;
-      z-index: 10;
-    }
-
-    .corporate-title-accent {
-      width: 100px;
-      height: 3px;
-      background: #c00000;
-      margin: 0 auto 4rem;
-      position: relative;
-      z-index: 10;
-    }
-
-    .corporate-title-accent::before,
-    .corporate-title-accent::after {
-      content: '';
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background: #c00000;
-      border-radius: 50%;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .corporate-title-accent::before {
-      left: -15px;
-    }
-
-    .corporate-title-accent::after {
-      right: -15px;
-    }
-
-    .corporate-content-box {
-      position: relative;
-      background: #ffffff;
-      border-radius: 30px;
-      padding: 4rem;
-      box-shadow: 0 20px 60px rgba(192, 0, 0, 0.1);
-      border: 2px solid rgba(192, 0, 0, 0.15);
-      transition: all 0.5s ease;
-      z-index: 10;
-      overflow: hidden;
-    }
-
-    .corporate-content-box::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(
-        45deg,
-        transparent 30%,
-        rgba(192, 0, 0, 0.05) 50%,
-        transparent 70%
-      );
-      animation: corporateBoxShine 3s linear infinite;
-    }
-
-    @keyframes corporateBoxShine {
-      0% { transform: translate(-100%, -100%) rotate(45deg); }
-      100% { transform: translate(100%, 100%) rotate(45deg); }
-    }
-
-    .corporate-content-box:hover {
-      transform: translateY(-15px);
-      border-color: rgba(192, 0, 0, 0.3);
-      box-shadow: 0 30px 80px rgba(192, 0, 0, 0.2);
-    }
-
-    .corporate-content-text {
-      font-size: 1.2rem;
-      line-height: 2;
-      color: #4a4a4a;
-      text-align: center;
+      font-family: "Poppins", sans-serif;
       margin: 0;
-      position: relative;
-      z-index: 2;
-      font-weight: 400;
+      padding: 0;
+      background: #f9f9f9;
+      color: #222;
     }
 
-    .corporate-floating-particles {
-      position: absolute;
+    .section {
+      padding: 70px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: left;
+      font-size: 32px;
+      color: #c00000;
+      margin-bottom: 40px;
+      border-left: 5px solid #c00000;
+      padding-left: 10px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .service-card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0px 8px 25px rgba(0,0,0,0.1);
+      text-align: justify;
+      cursor: pointer;
+      transition: transform 0.2s ease-out;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .service-card img {
       width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      overflow: hidden;
-      z-index: 1;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      transition: transform 0.4s ease-in-out;
     }
 
-    .corporate-particle {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      background: rgba(192, 0, 0, 0.3);
-      border-radius: 50%;
-      animation: corporateParticleFloat 15s linear infinite;
+    .service-card:hover img {
+      transform: scale(1.05);
     }
 
-    .corporate-particle:nth-child(1) {
-      left: 10%;
-      animation-delay: 0s;
-      animation-duration: 12s;
+    .service-card h3 {
+      text-align: center;
+      color: #c00000;
+      font-size: 20px;
+      margin: 10px 0;
     }
 
-    .corporate-particle:nth-child(2) {
-      left: 30%;
-      animation-delay: 2s;
-      animation-duration: 15s;
-    }
-
-    .corporate-particle:nth-child(3) {
-      left: 50%;
-      animation-delay: 4s;
-      animation-duration: 10s;
-    }
-
-    .corporate-particle:nth-child(4) {
-      left: 70%;
-      animation-delay: 1s;
-      animation-duration: 13s;
-    }
-
-    .corporate-particle:nth-child(5) {
-      left: 90%;
-      animation-delay: 3s;
-      animation-duration: 11s;
-    }
-
-    @keyframes corporateParticleFloat {
-      0% {
-        transform: translateY(100vh) scale(0);
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-      }
-      90% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-100vh) scale(1);
-        opacity: 0;
+    /* Responsive */
+    @media (max-width: 992px) {
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
       }
     }
 
     @media (max-width: 768px) {
-      .corporate-solutions-section {
-        padding: 5rem 0;
-      }
-
-      .corporate-content-box {
-        padding: 2.5rem 1.5rem;
-      }
-
-      .corporate-content-text {
-        font-size: 1.05rem;
-        line-height: 1.8;
-      }
+      h2 { text-align: center; font-size: 26px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { text-align: left; }
     }
   </style>
 </head>
+
 <body>
-  <!-- Hero Section -->
-  <section class="corporate-hero-section">
+
+  <section class="section">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="corporate-hero-wrapper text-center">
-            <h1 class="corporate-main-heading mb-0" data-aos="fade-up" data-aos-duration="800">
-              ABOUT US
-            </h1>
-            <div class="corporate-accent-line" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200"></div>
-            <p class="corporate-tagline mb-5" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-              Your trusted partner in finding the right talent for your business.
-            </p>
-            
-            <div class="mb-5" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
-              <button class="corporate-cta-btn">Get Started</button>
-            </div>
+      <h2 data-aos="fade-down">OUR SERVICES</h2>
 
-            <div class="row g-4 mt-5">
-              <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
-                <div class="corporate-stat-card">
-                  <span class="corporate-stat-value">500+</span>
-                  <span class="corporate-stat-text">Companies</span>
-                </div>
-              </div>
-              <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
-                <div class="corporate-stat-card">
-                  <span class="corporate-stat-value">5000+</span>
-                  <span class="corporate-stat-text">Placements</span>
-                </div>
-              </div>
-              <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="900">
-                <div class="corporate-stat-card">
-                  <span class="corporate-stat-value">98%</span>
-                  <span class="corporate-stat-text">Success Rate</span>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="services-grid">
+        <div class="service-card" data-aos="fade-right" data-aos-delay="100">
+          <img src="https://via.placeholder.com/350x200" alt="Contract Staffing">
+          <h3>Contract Staffing Services</h3>
+          <p>Ideal for businesses needing temporary workforce support. Get skilled professionals who can join quickly and deliver immediate value.</p>
         </div>
-      </div>
-    </div>
-    
-    <div class="corporate-scroll-indicator">↓</div>
-  </section>
 
-  <!-- Staffing Solutions Section -->
-  <section class="corporate-solutions-section">
-    <div class="corporate-floating-particles">
-      <div class="corporate-particle"></div>
-      <div class="corporate-particle"></div>
-      <div class="corporate-particle"></div>
-      <div class="corporate-particle"></div>
-      <div class="corporate-particle"></div>
-    </div>
-    
-    <div class="container position-relative">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <h2 class="corporate-section-title" data-aos="fade-up" data-aos-duration="1000">
-            TAILORED STAFFING SOLUTIONS FOR EVERY NEED
-          </h2>
-          <div class="corporate-title-accent" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"></div>
-          
-          <div class="corporate-content-box" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-            <p class="corporate-content-text">
-              Every organization has unique staffing needs, and TechMynds is here to help you navigate the complexities of
-              talent acquisition. Our range of staffing services is designed to provide the right solutions for your
-              specific business objectives.
-            </p>
-          </div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+          <img src="https://via.placeholder.com/350x200" alt="Long-term Staffing">
+          <h3>Long-Term Staffing Services</h3>
+          <p>Perfect for companies looking to build stable workforce strength while maintaining business flexibility and productivity.</p>
+        </div>
+
+        <div class="service-card" data-aos="fade-left" data-aos-delay="300">
+          <img src="https://via.placeholder.com/350x200" alt="Permanent Staffing">
+          <h3>Permanent Staffing Services</h3>
+          <p>Hire dedicated full-time professionals through our expert hiring strategy and talent acquisition process for lasting success.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <!-- Mouse 3D Tilt Effect -->
+  <script>
+    const cards = document.querySelectorAll('.service-card');
+    cards.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / 20);
+        const rotateY = ((x - centerX) / 20);
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      });
+    });
+  </script>
+
+  <!-- AOS Animation Script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init({
-      duration: 800,
-      once: true,
-      easing: 'ease-out'
+      duration: 1200,
+      once: true
     });
   </script>
+
 </body>
 </html>
