@@ -1397,7 +1397,7 @@ body {
 
 /* Bridging the Gap Section - Modern Corporate 3D Style */
 .bridging-gap {
-  padding: 140px 0;
+  padding: 40px 0 120px;
   position: relative;
   background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
   overflow: hidden;
