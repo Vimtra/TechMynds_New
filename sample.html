@@ -3,144 +3,249 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services - 3D + Scroll Animation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
-
+  <title>Corporate Services Section</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
   <style>
-    body {
-      font-family: "Poppins", sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
-      color: #222;
+      box-sizing: border-box;
     }
 
-    .section {
-      padding: 70px 20px;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f5f5;
+      padding: 60px 0;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
+    .services-section {
+      background: white;
+      padding: 100px 0;
     }
 
-    h2 {
-      text-align: left;
-      font-size: 32px;
+    .wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .section-title {
+      font-size: 3.5rem;
       color: #c00000;
-      margin-bottom: 40px;
-      border-left: 5px solid #c00000;
-      padding-left: 10px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      display: inline-block;
+      position: relative;
+    }
+
+    .section-title::before,
+    .section-title::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 60px;
+      background: #c00000;
+      top: 50%;
+    }
+
+    .section-title::before {
+      right: calc(100% + 30px);
+    }
+
+    .section-title::after {
+      left: calc(100% + 30px);
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
     }
 
     .service-card {
-      background: #fff;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0px 8px 25px rgba(0,0,0,0.1);
-      text-align: justify;
-      cursor: pointer;
-      transition: transform 0.2s ease-out;
-      transform-style: preserve-3d;
-      will-change: transform;
+      background: white;
+      border: 2px solid #e0e0e0;
+      padding: 50px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .service-card img {
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      transition: transform 0.4s ease-in-out;
+      height: 100%;
+      background: linear-gradient(135deg, #c00000 0%, #8b0000 100%);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 0;
     }
 
-    .service-card:hover img {
-      transform: scale(1.05);
+    .service-card:hover::before {
+      transform: scaleX(1);
     }
 
-    .service-card h3 {
-      text-align: center;
+    .service-card:hover {
+      border-color: #c00000;
+      box-shadow: 0 20px 50px rgba(192, 0, 0, 0.3);
+      transform: scale(1.03);
+    }
+
+    .service-number {
+      font-size: 4rem;
+      color: rgba(192, 0, 0, 0.1);
+      font-weight: 900;
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      transition: all 0.4s ease;
+      z-index: 1;
+    }
+
+    .service-card:hover .service-number {
+      color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.2);
+    }
+
+    .service-heading {
+      font-size: 1.6rem;
+      color: #222;
+      margin-bottom: 20px;
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+      transition: color 0.4s ease;
+    }
+
+    .service-card:hover .service-heading {
+      color: white;
+    }
+
+    .service-description {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #666;
+      position: relative;
+      z-index: 1;
+      transition: color 0.4s ease;
+    }
+
+    .service-card:hover .service-description {
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
       color: #c00000;
-      font-size: 20px;
-      margin: 10px 0;
+      margin-bottom: 25px;
+      transition: all 0.4s ease;
+      position: relative;
+      z-index: 1;
+      display: inline-block;
     }
 
-    /* Responsive */
-    @media (max-width: 992px) {
-      .services-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+    .service-card:hover .service-icon {
+      color: white;
+      transform: rotate(360deg) scale(1.2);
     }
 
     @media (max-width: 768px) {
-      h2 { text-align: center; font-size: 26px; }
-      .services-grid { grid-template-columns: 1fr; }
-      .service-card { text-align: left; }
+      .services-section {
+        padding: 60px 0;
+      }
+
+      .wrapper {
+        padding: 0 20px;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+      }
+
+      .section-title::before,
+      .section-title::after {
+        display: none;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .service-card {
+        padding: 40px 30px;
+      }
+
+      .service-number {
+        font-size: 3rem;
+      }
     }
   </style>
 </head>
-
 <body>
-
-  <section class="section">
-    <div class="container">
-      <h2 data-aos="fade-down">OUR SERVICES</h2>
+  <div class="services-section">
+    <div class="wrapper">
+      <div class="section-header" data-aos="zoom-in" data-aos-duration="1000">
+        <h2 class="section-title">SERVICES</h2>
+      </div>
 
       <div class="services-grid">
-        <div class="service-card" data-aos="fade-right" data-aos-delay="100">
-          <img src="https://via.placeholder.com/350x200" alt="Contract Staffing">
-          <h3>Contract Staffing Services</h3>
-          <p>Ideal for businesses needing temporary workforce support. Get skilled professionals who can join quickly and deliver immediate value.</p>
-        </div>
+        <article class="service-card" data-aos="flip-up" data-aos-duration="900" data-aos-delay="100">
+          <div class="service-number">01</div>
+          <i class="bi bi-people-fill service-icon"></i>
+          <h3 class="service-heading">Contract Staffing Services</h3>
+          <p class="service-description">
+            Ideal for businesses that need flexibility and temporary support, our contract staffing services provide
+            access to professionals who can step in immediately to handle short-term projects or fill gaps in your
+            workforce.
+          </p>
+        </article>
 
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
-          <img src="https://via.placeholder.com/350x200" alt="Long-term Staffing">
-          <h3>Long-Term Staffing Services</h3>
-          <p>Perfect for companies looking to build stable workforce strength while maintaining business flexibility and productivity.</p>
-        </div>
+        <article class="service-card" data-aos="flip-up" data-aos-duration="900" data-aos-delay="200">
+          <div class="service-number">02</div>
+          <i class="bi bi-briefcase-fill service-icon"></i>
+          <h3 class="service-heading">Long-Term Staffing Services</h3>
+          <p class="service-description">
+            For companies looking to build a more stable workforce without the long-term commitment of permanent hiring,
+            we offer long-term staffing solutions. This option allows you to benefit from the expertise of seasoned
+            professionals while maintaining operational flexibility.
+          </p>
+        </article>
 
-        <div class="service-card" data-aos="fade-left" data-aos-delay="300">
-          <img src="https://via.placeholder.com/350x200" alt="Permanent Staffing">
-          <h3>Permanent Staffing Services</h3>
-          <p>Hire dedicated full-time professionals through our expert hiring strategy and talent acquisition process for lasting success.</p>
-        </div>
+        <article class="service-card" data-aos="flip-up" data-aos-duration="900" data-aos-delay="300">
+          <div class="service-number">03</div>
+          <i class="bi bi-award-fill service-icon"></i>
+          <h3 class="service-heading">Permanent Staffing Services</h3>
+          <p class="service-description">
+            When you're looking for someone to join your team for the long haul, our permanent staffing services can help
+            you find the ideal full-time hire. Our thorough recruitment process ensures that each candidate we recommend
+            is someone who will thrive in your organization for years to come.
+          </p>
+        </article>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Mouse 3D Tilt Effect -->
-  <script>
-    const cards = document.querySelectorAll('.service-card');
-    cards.forEach(card => {
-      card.addEventListener('mousemove', e => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / 20);
-        const rotateY = ((x - centerX) / 20);
-        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'rotateX(0deg) rotateY(0deg)';
-      });
-    });
-  </script>
-
-  <!-- AOS Animation Script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init({
-      duration: 1200,
-      once: true
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 120,
+      anchorPlacement: 'top-bottom'
     });
   </script>
-
 </body>
 </html>
