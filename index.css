@@ -58,7 +58,7 @@ body {
 }
 
 .logo-image {
-  height: 60px;
+  height: 50px;
   width: auto;
   transition: all 0.4s ease;
   filter: drop-shadow(0 2px 8px rgba(200, 0, 0, 0.2));
@@ -83,6 +83,7 @@ body {
   gap: 0.5rem;
   align-items: center;
   list-style: none;
+  justify-content: center;
 }
 
 .nav-item {
@@ -1835,7 +1836,7 @@ body {
       display: grid;
       grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
       gap: 4rem;
-      padding: 4rem 0;
+      padding: 2rem 0;
       position: relative;
     }
 
