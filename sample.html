@@ -84,18 +84,11 @@
         }
 
         @keyframes bgShift {
-            0% {
-                background-position: 0% 0%;
-            }
-            50% {
-                background-position: 100% 100%;
-            }
-            100% {
-                background-position: 0% 0%;
-            }
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
         }
 
-        /* Animated gradient overlay */
         .hero-section::after {
             content: '';
             position: absolute;
@@ -103,30 +96,18 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, 
-                transparent 0%, 
-                rgba(192, 0, 0, 0.2) 25%, 
-                transparent 50%, 
-                rgba(192, 0, 0, 0.15) 75%, 
-                transparent 100%);
+            background: linear-gradient(45deg, transparent 0%, rgba(192, 0, 0, 0.2) 25%, transparent 50%, rgba(192, 0, 0, 0.15) 75%, transparent 100%);
             background-size: 400% 400%;
             animation: gradientFlow 6s ease infinite;
             z-index: 2;
         }
 
         @keyframes gradientFlow {
-            0% {
-                background-position: 0% 0%;
-            }
-            50% {
-                background-position: 100% 100%;
-            }
-            100% {
-                background-position: 0% 0%;
-            }
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
         }
 
-        /* Animated lines */
         .accent-bar {
             position: absolute;
             background: linear-gradient(90deg, transparent, rgba(192, 0, 0, 0.4), transparent);
@@ -159,34 +140,17 @@
         }
 
         @keyframes slideRight {
-            0% {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateX(100vw);
-                opacity: 0;
-            }
+            0% { transform: translateX(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100vw); opacity: 0; }
         }
 
         @keyframes slideLeft {
-            0% {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateX(-100vw);
-                opacity: 0;
-            }
+            0% { transform: translateX(100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(-100vw); opacity: 0; }
         }
 
-        /* Content wrapper */
         .hero-main {
             position: relative;
             z-index: 3;
@@ -204,7 +168,6 @@
             display: inline-block;
         }
 
-        /* Animated underline effect */
         .hero-main h1::after {
             content: '';
             position: absolute;
@@ -218,14 +181,8 @@
         }
 
         @keyframes expandWidth {
-            0%, 100% {
-                width: 80px;
-                opacity: 0.5;
-            }
-            50% {
-                width: 150px;
-                opacity: 1;
-            }
+            0%, 100% { width: 80px; opacity: 0.5; }
+            50% { width: 150px; opacity: 1; }
         }
 
         .hero-main p {
@@ -239,7 +196,6 @@
             margin-top: 30px;
         }
 
-        /* Glow effect on text */
         .glow-text {
             position: relative;
             color: #fff;
@@ -259,462 +215,272 @@
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Join Section */
-        .join-section {
-            padding: 140px 20px;
+        /* Career Section */
+        .career-section {
+            padding: 100px 20px;
             background: #ffffff;
             position: relative;
-            overflow: hidden;
+            z-index: 1;
         }
 
-        .join-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(192, 0, 0, 0.06) 0%, transparent 70%);
-            filter: blur(100px);
-            pointer-events: none;
-        }
+        .career { max-width: 1400px; }
 
-        .join-section::after {
-            content: '';
-            position: absolute;
-            bottom: -50%;
-            left: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(192, 0, 0, 0.05) 0%, transparent 70%);
-            filter: blur(100px);
-            pointer-events: none;
-        }
-
-        .join-section .container {
-            max-width: 1200px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .join-header {
-            text-align: center;
-            margin-bottom: 100px;
-        }
-
-        .section-title {
-            font-size: 3.2rem;
-            font-weight: 900;
-            color: #1a1a1a;
-            margin-bottom: 15px;
-            letter-spacing: -1px;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: #666;
-            line-height: 1.8;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-
-        .divider {
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, #c00000, transparent);
-            margin: 0 auto 40px;
-            border-radius: 2px;
-        }
-
-        .join-content-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            margin-bottom: 80px;
-        }
-
-        .join-text {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .join-text p {
-            font-size: 1rem;
-            color: #555;
-            line-height: 1.9;
-        }
-
-        .join-text strong {
-            color: #c00000;
-            font-weight: 700;
-        }
-
-        /* Referral Card */
-        .referral-container {
-            position: relative;
-        }
-
-        .job-card {
-            background: white;
-            border-radius: 20px;
-            padding: 50px;
-            border: 2px solid rgba(192, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
-            transform-style: preserve-3d;
-            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        /* Glass Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid rgba(192, 0, 0, 0.1);
+            border-radius: 16px;
+            padding: 35px;
+            backdrop-filter: blur(10px);
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
         }
 
-        .job-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(192, 0, 0, 0.08), transparent);
-            transition: left 0.8s ease;
-            pointer-events: none;
-        }
-
-        .job-card:hover::before {
-            left: 100%;
-        }
-
-        .job-card:hover {
-            transform: rotateX(5deg) rotateY(-5deg) translateZ(25px);
-            box-shadow: 0 30px 70px rgba(192, 0, 0, 0.2);
-            border-color: #c00000;
-        }
-
-        .job-card-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
-
-        .job-card h3 {
-            font-size: 2.2rem;
+        .jobList {
+            font-size: 1.5rem;
             font-weight: 800;
             color: #1a1a1a;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
+            margin-bottom: 25px !important;
         }
 
-        .job-card .badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #c00000, #a00000);
-            color: white;
-            padding: 6px 16px;
-            border-radius: 20px;
+        /* Job List Styles */
+        .list-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .list-group-item {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .list-group-item:hover {
+            border-color: #c00000;
+            border-left-color: #c00000;
+            box-shadow: 0 5px 20px rgba(192, 0, 0, 0.15);
+            transform: translateX(5px);
+        }
+
+        .list-group-item.active {
+            background: linear-gradient(135deg, rgba(192, 0, 0, 0.08) 0%, rgba(192, 0, 0, 0.04) 100%);
+            border-color: #c00000;
+            border-left-color: #c00000;
+            box-shadow: 0 8px 25px rgba(192, 0, 0, 0.2);
+        }
+
+        .list-group-item h5 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+
+        .list-group-item p {
             font-size: 0.85rem;
+            color: #666;
+            margin: 3px 0;
+        }
+
+        .job-badge {
+            display: inline-block;
+            background: #c00000;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-top: 8px;
+        }
+
+        /* Job Details */
+        .job-details-header {
+            border-bottom: 2px solid rgba(192, 0, 0, 0.2);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .job-details-header h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1a1a1a;
+        }
+
+        #jobInfo h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 25px 0 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #jobInfo h4 span {
+            color: #c00000;
+        }
+
+        .meta-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px !important;
+        }
+
+        .meta-item {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #c00000;
+        }
+
+        .label-strong {
+            font-weight: 700;
+            color: #c00000;
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .job-card p {
-            color: #666;
+        #jobInfo > div {
+            margin-bottom: 25px;
+        }
+
+        #jobInfo p {
+            color: #555;
             line-height: 1.8;
-            margin-bottom: 15px;
+            margin: 10px 0;
             font-size: 0.95rem;
         }
 
-        .apply-btn {
-            display: inline-block;
+        .apply-now-btn {
             background: linear-gradient(135deg, #c00000 0%, #a00000 100%);
             color: white;
             padding: 16px 40px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 700;
-            border: 2px solid #c00000;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            margin-top: 30px;
-            font-size: 0.95rem;
-            position: relative;
-            overflow: hidden;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .apply-btn::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .apply-btn:hover::after {
-            width: 300px;
-            height: 300px;
-        }
-
-        .apply-btn:hover {
-            transform: scale(1.08) translateY(-3px);
-            box-shadow: 0 20px 50px rgba(192, 0, 0, 0.35);
-            background: linear-gradient(135deg, #a00000 0%, #c00000 100%);
-            border-color: #c00000;
-        }
-
-        .apply-btn:active {
-            transform: scale(0.95);
-        }
-
-        /* Modal Styles */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: 16px;
-            padding: 40px;
-            max-width: 600px;
-            width: 90%;
-            max-height: 70vh;
-            overflow-y: auto;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            animation: slideUp 0.3s ease;
-            position: relative;
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
             border: none;
-            font-size: 2rem;
-            color: #c00000;
+            border-radius: 10px;
+            font-weight: 700;
             cursor: pointer;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.95rem;
         }
 
-        .modal-close:hover {
-            transform: rotate(90deg);
-            color: #a00000;
+        .apply-now-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(192, 0, 0, 0.3);
+        }
+
+        .apply-now-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Modal */
+        .modal-content {
+            border: 2px solid rgba(192, 0, 0, 0.1);
+            border-radius: 16px;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, rgba(192, 0, 0, 0.08) 0%, rgba(192, 0, 0, 0.04) 100%);
+            border-bottom: 2px solid rgba(192, 0, 0, 0.2);
         }
 
         .modal-title {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: #c00000;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-            text-align: center;
+            text-align: center !important;
+            width: 100%;
         }
 
-        .modal-subtitle {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-
-        .modal-subtitle strong {
-            color: #1a1a1a;
-        }
-
-        /* Form Styles */
-        .application-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+        .modal-body {
+            padding: 30px;
         }
 
         .form-label {
-            font-size: 0.95rem;
             font-weight: 600;
             color: #1a1a1a;
+            margin-bottom: 8px;
         }
 
-        .required {
-            color: #c00000;
-        }
-
-        .form-input {
-            padding: 12px 16px;
+        .form-control {
             border: 2px solid #e0e0e0;
             border-radius: 8px;
-            font-size: 0.95rem;
-            font-family: inherit;
+            padding: 10px 15px;
             transition: all 0.3s ease;
         }
 
-        .form-input:focus {
-            outline: none;
+        .form-control:focus {
             border-color: #c00000;
             box-shadow: 0 0 0 3px rgba(192, 0, 0, 0.1);
         }
 
-        .form-textarea {
-            resize: vertical;
-            min-height: 100px;
+        .form-text {
+            font-size: 0.85rem;
+            color: #666;
         }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+        .modal-footer {
+            border-top: 2px solid rgba(192, 0, 0, 0.2);
+            padding-top: 20px;
         }
 
-        .file-upload {
-            border: 2px dashed #c00000;
-            border-radius: 8px;
-            padding: 30px;
+        .btn-primary {
+            background: #c00000 !important;
+            border-color: #c00000 !important;
+            font-weight: 700;
+        }
+
+        .btn-primary:hover {
+            background: #a00000 !important;
+            border-color: #a00000 !important;
+        }
+
+        .thank-you-container {
             text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background: rgba(192, 0, 0, 0.02);
+            padding: 30px;
         }
 
-        .file-upload:hover {
-            background: rgba(192, 0, 0, 0.05);
-            border-color: #a00000;
+        .thank-you-container h5 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
         }
 
-        .file-upload.dragover {
-            background: rgba(192, 0, 0, 0.1);
-            border-color: #a00000;
+        .thank-you-container p {
+            color: #666;
+            line-height: 1.8;
         }
 
-        .file-input {
+        .error-message {
+            color: #c00000;
+            font-size: 0.85rem;
+            margin-top: 5px;
             display: none;
         }
 
-        .file-label {
+        .error-message.show {
+            display: block;
+        }
+
+        .file-name {
+            font-size: 0.85rem;
             color: #666;
-            font-size: 0.95rem;
-        }
-
-        .checkbox-group {
-            margin-top: 10px;
-        }
-
-        .checkbox-label {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            color: #555;
-        }
-
-        .checkbox-label input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-            accent-color: #c00000;
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, #c00000 0%, #a00000 100%);
-            color: white;
-            padding: 14px 30px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 20px;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(192, 0, 0, 0.3);
-        }
-
-        .submit-btn:active {
-            transform: translateY(0);
-        }
-
-        @media (max-width: 600px) {
-            .modal-content {
-                padding: 30px 20px;
-            }
-
-            .modal-title {
-                font-size: 1.5rem;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .file-upload {
-                padding: 20px;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .join-content-wrapper {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+            margin-top: 5px;
         }
 
         @media (max-width: 768px) {
@@ -726,40 +492,21 @@
                 font-size: 1rem;
             }
 
-            .hero-section::before {
-                background-attachment: scroll;
-            }
-
             .accent-bar {
                 display: none;
             }
 
-            .section-title {
-                font-size: 2rem;
+            .career-section {
+                padding: 60px 20px;
             }
 
-            .section-subtitle {
-                font-size: 1rem;
+            .glass-card {
+                padding: 25px;
             }
 
-            .join-section {
-                padding: 80px 20px;
-            }
-
-            .join-header {
-                margin-bottom: 60px;
-            }
-
-            .join-content-wrapper {
-                gap: 30px;
-            }
-
-            .job-card {
-                padding: 35px;
-            }
-
-            .job-card h3 {
-                font-size: 1.6rem;
+            .meta-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
             }
         }
     </style>
@@ -768,24 +515,16 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid px-5">
-            <a class="navbar-brand" href="#">IT Solutions</a>
+            <a class="navbar-brand" href="#">TechMynds</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#careers">Careers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#careers">Careers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -793,7 +532,6 @@
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <!-- Animated lines -->
         <div class="accent-bar accent-bar-top"></div>
         <div class="accent-bar accent-bar-mid"></div>
         <div class="accent-bar accent-bar-bottom"></div>
@@ -804,97 +542,135 @@
         </div>
     </section>
 
-    <!-- Join Section -->
-    <section class="join-section">
-        <div class="container">
-            <!-- Header -->
-            <div class="join-header" data-aos="fade-up">
-                <h2 class="section-title">Why Join TechMynds Inc?</h2>
-                <p class="section-subtitle">
-                    Be part of a dynamic team that values innovation, collaboration, and continuous growth.
-                </p>
-                <div class="divider"></div>
-            </div>
+    <!-- Career Section -->
+    <section class="career-section">
+        <main class="container career">
+            <div class="row gx-4 gy-4 align-items-start">
+                <!-- Left: Job List -->
+                <aside class="col-lg-4 col-md-5">
+                    <div class="glass-card h-100 d-flex flex-column">
+                        <h3 class="jobList">Current Listings</h3>
+                        <div id="jobList" class="list-group flex-grow-1" role="listbox" aria-label="Job listings"></div>
+                    </div>
+                </aside>
 
-            <!-- Content Wrapper -->
-            <div class="join-content-wrapper">
-                <!-- Left Text -->
-                <div class="join-text" data-aos="fade-right" data-aos-delay="100">
-                    <p>
-                        At <strong>TechMynds Inc</strong>, we're not just building jobs — we're building careers. Our team is passionate about connecting the right talent with the right opportunities and fostering an environment where everyone can thrive.
-                    </p>
-                    <p>
-                        We believe in innovation, collaboration, and growth. Every team member is valued, and every voice matters. Whether you're an experienced professional or just starting your journey, TechMynds offers the tools, mentorship, and opportunities you need to succeed.
-                    </p>
-                    <p>
-                        Our culture celebrates creativity, encourages bold thinking, and supports professional development. When you join us, you're joining a community committed to making an impact in the tech industry.
-                    </p>
-                </div>
+                <!-- Right: Job Details -->
+                <section class="col-lg-8 col-md-7">
+                    <div class="glass-card h-100" id="jobInfo" aria-live="polite">
+                        <div class="job-details-header">
+                            <h3>Job Details</h3>
+                        </div>
 
-                <!-- Right Card -->
-                <div class="referral-container" data-aos="flip-up" data-aos-delay="200" data-aos-duration="800">
-                    <div class="job-card">
-                        <div class="job-card-content">
-                            <div class="badge">Special Opportunity</div>
-                            <h3>Employee Referral Program</h3>
-                            <p>
-                                Know someone who would be a perfect fit for our team? Help us find great talent and get rewarded for it!
-                            </p>
-                            <p>
-                                Refer a candidate to TechMynds Inc. If your referral is hired, you'll receive a special reward as a token of our appreciation. It's our way of saying thank you for helping us build a stronger team.
-                            </p>
-                            <button class="apply-btn" onclick="openForm('Employee Referral Program')">Refer Now</button>
+                        <h4>JOB: <span id="jobTitle">Software Developer</span></h4>
+
+                        <div class="meta-row mb-3">
+                            <div class="meta-item">
+                                <span class="label-strong">Posted Date</span>
+                                <div id="postedDate">01/15/2025</div>
+                            </div>
+                            <div class="meta-item">
+                                <span class="label-strong">Salary</span>
+                                <div id="salary">$155,688.00 per year</div>
+                            </div>
+                            <div class="meta-item">
+                                <span class="label-strong">Openings</span>
+                                <div id="openings">5</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p class="label-strong">Working Hours</p>
+                            <div id="workingHours" style="display: inline-block; margin-left: 6px">Fulltime, 40 hrs/week</div>
+                        </div>
+
+                        <div>
+                            <span class="label-strong">Location</span>
+                            <div id="location">TechMynds Inc, 1981 J N Pease Place, Suite 104, Charlotte, NC 28262</div>
+                        </div>
+
+                        <div>
+                            <span class="label-strong">Experience</span>
+                            <div id="experience">Experience of Six (6) Months should include working with Security Testing/Analysis of Cloud Based Networks/Applications (Azure/AWS/GCP). Travel and/or relocation to unanticipated client sites within USA may be required.</div>
+                        </div>
+
+                        <div>
+                            <span class="label-strong">Qualifications</span>
+                            <div id="education">Master's degree in Computer Science or related field preferred; Bachelor's plus five years of progressive experience accepted.</div>
+                        </div>
+
+                        <div>
+                            <span class="label-strong">Job Duties</span>
+                            <div id="jobDuties">Develop Java based applications using latest software design principles and technologies. Requirements gathering, Analysis, Design, Development and Testing of application using AGILE methodology (SCRUM) in a test-driven development (TDD) approach. Migrate existing Monolithic architecture to Microservices architecture using Spring Boot & Spring Cloud. Develop enterprise applications using Spring Boot, Hibernate, Spring IOC, Spring MVC, Spring JDBC. Implement authentication and authorization using Spring Security and OAuth2. Design, develop, and test HTML5, CSS3, Bootstrap, JavaScript, jQuery and React.JS. Work under supervision.</div>
+                        </div>
+
+                        <div class="d-flex justify-content-end mt-4">
+                            <button class="apply-now-btn" id="openApply" data-bs-toggle="modal" data-bs-target="#applicationModal">Apply Now</button>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
-        </div>
+        </main>
     </section>
 
-    <!-- Modal Form -->
-    <div id="applicationModal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeForm()">&times;</button>
-            <h2 class="modal-title">Job Application</h2>
-            <p class="modal-subtitle">Applying For: <strong id="positionName">Employee Referral Program</strong></p>
-
-            <form id="applicationForm" class="application-form">
-                <div class="form-group">
-                    <label for="fullName" class="form-label">Full Name <span class="required">*</span></label>
-                    <input type="text" id="fullName" class="form-input" placeholder="Enter your full name" required>
+    <!-- Application Modal -->
+    <div class="modal fade" id="applicationModal" tabindex="-1" aria-labelledby="applicationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="applicationModalLabel">Apply for Job</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-                <div class="form-group">
-                    <label for="email" class="form-label">Email <span class="required">*</span></label>
-                    <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
-                </div>
+                <div class="modal-body">
+                    <form id="applicationForm">
+                        <div class="mb-3">
+                            <label for="applicantName" class="form-label">Full Name *</label>
+                            <input type="text" class="form-control" id="applicantName" name="name" required>
+                            <div class="error-message" id="nameError">Please enter a valid name (3-100 characters)</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="applicantEmail" class="form-label">Email address *</label>
+                            <input type="email" class="form-control" id="applicantEmail" name="email" required>
+                            <div class="error-message" id="emailError">Please enter a valid email address</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="applicantPhone" class="form-label">Phone Number *</label>
+                            <input type="tel" class="form-control" id="applicantPhone" name="phone" required pattern="[0-9\-\+\(\)\s]{10,}">
+                            <div class="error-message" id="phoneError">Please enter a valid phone number</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="jobTitleDisplay" class="form-label">Applying for *</label>
+                            <input type="text" class="form-control" id="jobTitleDisplay" name="job_applied_for_display" readonly>
+                            <input type="hidden" id="jobTitleHidden" name="job_applied_for">
+                        </div>
+                        <div class="mb-3">
+                            <label for="resumeFile" class="form-label">Upload Resume *</label>
+                            <input class="form-control" type="file" id="resumeFile" name="resumeFile" accept=".pdf,.doc,.docx" required>
+                            <div class="form-text">Accepted formats: PDF, DOC, DOCX. Maximum size: 10MB</div>
+                            <div class="file-name" id="fileName"></div>
+                            <div class="error-message" id="fileError"></div>
+                        </div>
 
-                <div class="form-group">
-                    <label for="phone" class="form-label">Phone Number <span class="required">*</span></label>
-                    <input type="tel" id="phone" class="form-input" placeholder="Enter your phone number" required>
-                </div>
+                        <div id="thankYouMessage" class="thank-you-container d-none mt-3 text-center">
+                            <div style="font-size: 3rem; color: #c00000; margin-bottom: 15px;">✓</div>
+                            <h5>Thank You for Your Application!</h5>
+                            <p>We have received your application and will review it shortly. Our HR team will contact you if your qualifications match our requirements.</p>
+                        </div>
+                    </form>
 
-                <div class="form-group">
-                    <label for="experience" class="form-label">Experience (Years) <span class="required">*</span></label>
-                    <input type="number" id="experience" class="form-input" placeholder="0" min="0" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="resume" class="form-label">Upload Resume <span class="required">*</span></label>
-                    <div class="file-upload">
-                        <input type="file" id="resume" class="file-input" accept=".pdf,.doc,.docx" required>
-                        <span class="file-label">Choose file or drag here</span>
+                    <div class="modal-footer" id="modalFooter">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" form="applicationForm" id="submitBtn">Submit Application</button>
                     </div>
                 </div>
-
-                <button type="submit" class="submit-btn">Submit Application</button>
-            </form>
+            </div>
         </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
+        // Initialize AOS
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
@@ -902,50 +678,255 @@
             offset: 50
         });
 
-        // Form Functions
-        function openForm(positionName) {
-            document.getElementById('positionName').textContent = positionName;
-            document.getElementById('applicationModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
+        // Job data
+        const jobs = [
+            {
+                title: 'Software Developer',
+                postedDate: '01/15/2025',
+                salary: '$155,688.00 per year',
+                openings: 5,
+                location: 'TechMynds Inc, 1981 J N Pease Place, Suite 104, Charlotte, NC 28262',
+                workingHours: 'Fulltime, 40 hrs/week',
+                experience: 'Experience of Six (6) Months should include working with Security Testing/Analysis of Cloud Based Networks/Applications (Azure/AWS/GCP). Travel and/or relocation to unanticipated client sites within USA may be required.',
+                education: "Master's degree in Computer Science or related field preferred; Bachelor's plus five years of progressive experience accepted.",
+                duties: 'Develop Java based applications using latest software design principles and technologies. Requirements gathering, Analysis, Design, Development and Testing of application using AGILE methodology (SCRUM) in a test-driven development (TDD) approach. Migrate existing Monolithic architecture to Microservices architecture using Spring Boot & Spring Cloud. Develop enterprise applications using Spring Boot, Hibernate, Spring IOC, Spring MVC, Spring JDBC. Implement authentication and authorization using Spring Security and OAuth2. Design, develop, and test HTML5, CSS3, Bootstrap, JavaScript, jQuery and React.JS. Work under supervision.'
+            },
+            {
+                title: 'AWS DevOps Engineer',
+                postedDate: '01/10/2025',
+                salary: '$165,000.00 per year',
+                openings: 3,
+                location: 'TechMynds Inc, 345 Market Street, Suite 200, San Francisco, CA 94105',
+                workingHours: 'Fulltime, 40 hrs/week',
+                experience: 'Experience with AWS infrastructure, CI/CD pipelines, and cloud deployment. Knowledge of containerization and orchestration tools is required.',
+                education: "Bachelor's degree in Computer Science or related field. AWS certifications preferred.",
+                duties: 'Design and implement scalable cloud infrastructure using AWS services. Manage CI/CD pipelines for automated deployments. Monitor and optimize system performance and reliability. Implement Infrastructure as Code (IaC) using Terraform and CloudFormation. Setup and maintain monitoring and logging solutions.'
+            },
+            {
+                title: 'Frontend Developer',
+                postedDate: '01/08/2025',
+                salary: '$145,000.00 per year',
+                openings: 4,
+                location: 'TechMynds Inc, 500 Congress Avenue, Suite 1200, Austin, TX 78701',
+                workingHours: 'Fulltime, 40 hrs/week',
+                experience: 'Experience with React, Vue, or Angular frameworks. Strong knowledge of HTML5, CSS3, and JavaScript ES6+.',
+                education: "Bachelor's degree in Computer Science or related field. Strong portfolio required.",
+                duties: 'Design and develop responsive web applications using modern frameworks. Create user-friendly interfaces with HTML5, CSS3, and JavaScript. Build dynamic applications using React.JS and other front-end libraries. Implement RESTful API integrations for backend services. Optimize application performance and ensure cross-browser compatibility.'
+            }
+        ];
+
+        // Populate job list
+        const jobList = document.getElementById('jobList');
+        jobs.forEach((job, index) => {
+            const item = document.createElement('div');
+            item.className = `list-group-item ${index === 0 ? 'active' : ''}`;
+            item.onclick = () => selectJob(index);
+            item.innerHTML = `
+                <h5>${job.title}</h5>
+                <p>${job.location.split(',')[1]?.trim() || 'Remote'}</p>
+                <span class="job-badge">${job.openings} Openings</span>
+            `;
+            jobList.appendChild(item);
+        });
+
+        // Select job function
+        function selectJob(index) {
+            const job = jobs[index];
+            
+            // Update active state
+            document.querySelectorAll('.list-group-item').forEach((item, i) => {
+                item.classList.toggle('active', i === index);
+            });
+
+            // Update job details
+            document.getElementById('jobTitle').textContent = job.title;
+            document.getElementById('postedDate').textContent = job.postedDate;
+            document.getElementById('salary').textContent = job.salary;
+            document.getElementById('openings').textContent = job.openings;
+            document.getElementById('location').textContent = job.location;
+            document.getElementById('workingHours').textContent = job.workingHours;
+            document.getElementById('experience').textContent = job.experience;
+            document.getElementById('education').textContent = job.education;
+            document.getElementById('jobDuties').textContent = job.duties;
+
+            // Update modal
+            document.getElementById('jobTitleDisplay').value = job.title;
+            document.getElementById('jobTitleHidden').value = job.title;
         }
 
-        function closeForm() {
-            document.getElementById('applicationModal').classList.remove('active');
-            document.body.style.overflow = 'auto';
-            document.getElementById('applicationForm').reset();
+        // Initialize first job
+        selectJob(0);
+
+        // Validation functions
+        function validateName(name) {
+            return name.trim().length >= 3 && name.trim().length <= 100;
         }
 
-        // Close modal when clicking outside
-        document.getElementById('applicationModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeForm();
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function validatePhone(phone) {
+            const phoneRegex = /^[0-9\-\+\(\)\s]{10,}$/;
+            return phoneRegex.test(phone.replace(/\s/g, ''));
+        }
+
+        function validateFile(file) {
+            const maxSize = 10 * 1024 * 1024; // 10MB
+            const allowedFormats = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+            
+            if (!file) {
+                return { valid: false, message: 'Please select a resume file' };
+            }
+            
+            if (file.size > maxSize) {
+                return { valid: false, message: 'File size exceeds 10MB limit' };
+            }
+            
+            if (!allowedFormats.includes(file.type)) {
+                return { valid: false, message: 'Only PDF, DOC, and DOCX formats are allowed' };
+            }
+            
+            return { valid: true, message: '' };
+        }
+
+        // Clear error messages
+        function clearErrors() {
+            document.getElementById('nameError').classList.remove('show');
+            document.getElementById('emailError').classList.remove('show');
+            document.getElementById('phoneError').classList.remove('show');
+            document.getElementById('fileError').classList.remove('show');
+        }
+
+        // File input handler
+        document.getElementById('resumeFile').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const fileNameEl = document.getElementById('fileName');
+            const fileErrorEl = document.getElementById('fileError');
+            
+            if (file) {
+                fileNameEl.textContent = `Selected: ${file.name}`;
+                
+                const validation = validateFile(file);
+                if (!validation.valid) {
+                    fileErrorEl.textContent = validation.message;
+                    fileErrorEl.classList.add('show');
+                    document.getElementById('resumeFile').value = '';
+                    fileNameEl.textContent = '';
+                } else {
+                    fileErrorEl.classList.remove('show');
+                }
             }
         });
 
         // Form submission
         document.getElementById('applicationForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your application! We will contact you soon.');
-            closeForm();
+            
+            clearErrors();
+            
+            // Get form values
+            const name = document.getElementById('applicantName').value;
+            const email = document.getElementById('applicantEmail').value;
+            const phone = document.getElementById('applicantPhone').value;
+            const file = document.getElementById('resumeFile').files[0];
+            const jobTitle = document.getElementById('jobTitleHidden').value;
+            
+            let isValid = true;
+
+            // Validate name
+            if (!validateName(name)) {
+                document.getElementById('nameError').classList.add('show');
+                isValid = false;
+            }
+
+            // Validate email
+            if (!validateEmail(email)) {
+                document.getElementById('emailError').classList.add('show');
+                isValid = false;
+            }
+
+            // Validate phone
+            if (!validatePhone(phone)) {
+                document.getElementById('phoneError').classList.add('show');
+                isValid = false;
+            }
+
+            // Validate file
+            const fileValidation = validateFile(file);
+            if (!fileValidation.valid) {
+                document.getElementById('fileError').textContent = fileValidation.message;
+                document.getElementById('fileError').classList.add('show');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                return;
+            }
+
+            // Create FormData object
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('phone', phone);
+            formData.append('job_applied_for', jobTitle);
+            formData.append('resume', file);
+
+            // Disable submit button
+            document.getElementById('submitBtn').disabled = true;
+            document.getElementById('submitBtn').textContent = 'Submitting...';
+
+            // Simulate form submission (replace with actual backend URL)
+            // For production, uncomment below and replace with your API endpoint:
+            // fetch('/api/applications', { 
+            //     method: 'POST', 
+            //     body: formData 
+            // }).then(response => response.json())
+            //   .then(data => showThankYou())
+            //   .catch(error => console.error('Error:', error));
+
+            setTimeout(() => {
+                showThankYou();
+            }, 1500);
         });
 
-        // Drag and drop for file
-        const fileUpload = document.querySelector('.file-upload');
-        const fileInput = document.getElementById('resume');
+        // Show thank you message
+        function showThankYou() {
+            // Hide form
+            document.getElementById('applicationForm').style.display = 'none';
+            document.getElementById('modalFooter').classList.add('d-none');
+            
+            // Show thank you message
+            document.getElementById('thankYouMessage').classList.remove('d-none');
 
-        fileUpload.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            fileUpload.classList.add('dragover');
-        });
+            // Reset after 3 seconds
+            setTimeout(() => {
+                const modal = bootstrap.Modal.getInstance(document.getElementById('applicationModal'));
+                modal.hide();
+                
+                // Reset form view
+                document.getElementById('applicationForm').style.display = 'block';
+                document.getElementById('modalFooter').classList.remove('d-none');
+                document.getElementById('thankYouMessage').classList.add('d-none');
+                document.getElementById('applicationForm').reset();
+                document.getElementById('fileName').textContent = '';
+                document.getElementById('submitBtn').disabled = false;
+                document.getElementById('submitBtn').textContent = 'Submit Application';
+                clearErrors();
+            }, 3000);
+        }
 
-        fileUpload.addEventListener('dragleave', () => {
-            fileUpload.classList.remove('dragover');
-        });
-
-        fileUpload.addEventListener('drop', (e) => {
-            e.preventDefault();
-            fileUpload.classList.remove('dragover');
-            fileInput.files = e.dataTransfer.files;
+        // Reset modal when closed
+        document.getElementById('applicationModal').addEventListener('hidden.bs.modal', function() {
+            document.getElementById('applicationForm').style.display = 'block';
+            document.getElementById('modalFooter').classList.remove('d-none');
+            document.getElementById('thankYouMessage').classList.add('d-none');
+            document.getElementById('applicationForm').reset();
+            document.getElementById('fileName').textContent = '';
+            document.getElementById('submitBtn').disabled = false;
+            document.getElementById('submitBtn').textContent = 'Submit Application';
+            clearErrors();
         });
     </script>
 </body>
