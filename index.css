@@ -266,6 +266,7 @@ body {
   height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: space-evenly ;
   padding: 0 8%;
   padding-top: 70px; /* Reduced from 100px */
   color: white;
@@ -431,6 +432,7 @@ body {
 
   .hero-content {
     text-align: center;
+    margin-top: 30px;
   }
 
   .hero h1 {
@@ -449,7 +451,7 @@ body {
   }
 
   .hero-image {
-    margin-top: 25px;
+    margin-top: 10px;
   }
 }
 
