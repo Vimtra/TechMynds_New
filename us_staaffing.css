@@ -3,7 +3,7 @@
             position: relative;
             height: 500px;
             background-image: linear-gradient(135deg, rgba(192, 0, 0, 0.85), rgba(107, 14, 14, 0.85)), 
-                                 url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070');
+                                 url('./Images/us-staffing-img.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -233,6 +233,7 @@ font-family: "Lexend", sans-serif;
 
         .staff-feature-title {
             font-family: 'Castoro', serif;
+            text-align: center  ;
             font-size: 1.5rem;
             color: #222;
             font-weight: 700;
@@ -247,12 +248,14 @@ font-family: "Lexend", sans-serif;
         }
 
         .staff-feature-text {
+            font-family: 'Lexend', sans-serif;
             font-size: 1rem;
             line-height: 1.8;
             color: #666;
             transition: color 0.3s ease;
             position: relative;
             z-index: 5;
+            text-align: justify;
         }
 
         .staff-feature-card:hover .staff-feature-text {
@@ -316,14 +319,16 @@ font-family: "Lexend", sans-serif;
         }
 
         .staff-contact-card h3 {
-            font-family: 'Quicksand', sans-serif;
+font-family: "Lexend", sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--text-dark);
+            /* color: var(--text-dark); */
             margin-bottom: 0.8rem;
         }
 
         .staff-contact-card p {
+                        font-family: 'Lexend', sans-serif;
+
             color: var(--text-light);
             font-size: 1.1rem;
             line-height: 1.7;

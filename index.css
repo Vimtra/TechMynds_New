@@ -93,7 +93,7 @@ max-width: 1400px;
 
 /* MODIFIED NAV LINK STYLES: Removed underline and added subtle background hover */
 .nav-link {
-  font-family: "Castoro", serif;
+            font-family: 'Lexend', sans-serif;
   display: block;
   padding: 0.6rem 1.2rem;
   color: #333;
