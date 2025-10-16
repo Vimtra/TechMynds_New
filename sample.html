@@ -3,629 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>US Staffing - TechMynds</title>
+    <title>Careers - IT Staffing & Solutions</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.0/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
-        :root {
-            --primary-color: #c00000;
-            --primary-dark: #a00000;
-            --primary-light: #e6cccc;
-            --text-dark: #1a1a1a;
-            --text-light: #666;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html, body {
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--text-dark);
-            scroll-behavior: smooth;
-        }
-
-        /* Navigation */
-        .staff-navbar {
-            background: white;
-            box-shadow: 0 2px 15px rgba(192, 0, 0, 0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-
-        .staff-brand {
-            font-weight: 800;
-            color: var(--primary-color) !important;
-            font-size: 1.6rem;
-            letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .staff-brand img {
-            height: 40px;
-            width: auto;
-        }
-
-        .staff-nav-link {
-            color: var(--text-light) !important;
-            font-weight: 600;
-            margin: 0 8px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .staff-nav-link:hover {
-            color: var(--primary-color) !important;
-        }
-
-        .staff-nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-
-        .staff-nav-link:hover::after {
-            width: 100%;
+            overflow-x: hidden;
         }
 
         /* Hero Section */
-        .staff-hero {
+        .hero-section {
             position: relative;
-            height: 500px;
-            background-image: linear-gradient(135deg, rgba(192, 0, 0, 0.85), rgba(107, 14, 14, 0.85)), 
-                                 url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            height: 50vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
             color: white;
-            overflow: hidden;
         }
 
-        .staff-hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.08), transparent 50%),
-                        radial-gradient(circle at 70% 50%, rgba(255, 255, 255, 0.05), transparent 50%);
-            animation: heroFloat 20s ease-in-out infinite;
-        }
-
-        @keyframes heroFloat {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(10px, 10px); }
-        }
-
-        .staff-hero-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            max-width: 700px;
-            padding: 20px;
-        }
-
-        .staff-hero-content h1 {
-            font-family: 'Quicksand', sans-serif;
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .staff-hero-content p {
-            font-size: clamp(1.1rem, 2vw, 1.5rem);
-            color: rgba(255, 255, 255, 0.95);
-            font-weight: 300;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Content Section */
-        .staff-content-wrapper {
-            background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
-            padding: 50px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .staff-content-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: -300px;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(192, 0, 0, 0.06), transparent 70%);
-            border-radius: 50%;
-            animation: floatShape 15s ease-in-out infinite;
-        }
-
-        @keyframes floatShape {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(30px, -30px); }
-        }
-
-        .staff-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .staff-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .staff-header h2 {
-            font-family: 'Quicksand', sans-serif;
-            font-size: 3.2rem;
-            color: var(--primary-color);
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-        }
-
-        .staff-description {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: #555;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        /* Features Grid */
-        .staff-features-section {
-            padding: 50px 0;
-            background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .staff-features-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: -300px;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(192, 0, 0, 0.06), transparent 70%);
-            border-radius: 50%;
-            animation: floatShape 15s ease-in-out infinite;
-        }
-
-        .staff-features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
-            margin-top: 50px;
-        }
-
-        .staff-feature-card {
-            background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
-            padding: 50px 40px;
-            border-radius: 20px;
-            border: 2px solid #e0e0e0;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        .staff-feature-card::before {
+        .hero-section::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #c00000, #ff0000, #c00000);
-            background-size: 200% 100%;
-            animation: gradientFlow 3s ease infinite;
+            height: 100%;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a0505 50%, #0f0f1e 100%);
+            background-size: 400% 400%;
+            animation: bgShift 10s ease infinite;
+            z-index: 1;
+        }
+
+        @keyframes bgShift {
+            0% {
+                background-position: 0% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+
+        /* Animated gradient overlay */
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                transparent 0%, 
+                rgba(192, 0, 0, 0.2) 25%, 
+                transparent 50%, 
+                rgba(192, 0, 0, 0.15) 75%, 
+                transparent 100%);
+            background-size: 400% 400%;
+            animation: gradientFlow 6s ease infinite;
+            z-index: 2;
         }
 
         @keyframes gradientFlow {
-            0%, 100% { background-position: 0% 0%; }
-            50% { background-position: 100% 0%; }
+            0% {
+                background-position: 0% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
         }
 
-        .staff-feature-card::after {
-            content: '';
+        /* Animated lines */
+        .accent-bar {
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent 30%, rgba(192, 0, 0, 0.1), transparent 70%);
-            transition: left 0.8s ease;
+            background: linear-gradient(90deg, transparent, rgba(192, 0, 0, 0.4), transparent);
+            z-index: 2;
+            pointer-events: none;
         }
 
-        .staff-feature-card:hover::after {
-            left: 100%;
+        .accent-bar-top {
+            width: 300px;
+            height: 2px;
+            top: 20%;
+            left: 0;
+            animation: slideRight 5s infinite ease-in-out;
         }
 
-        .staff-feature-card:hover {
-            transform: translateY(-20px) rotateX(8deg) rotateZ(-2deg) scale(1.03);
-            border-color: #c00000;
-            box-shadow: 0 30px 60px rgba(192, 0, 0, 0.25), inset 0 0 20px rgba(192, 0, 0, 0.05);
-            background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
+        .accent-bar-mid {
+            width: 250px;
+            height: 2px;
+            bottom: 30%;
+            right: 0;
+            animation: slideLeft 6s infinite ease-in-out 1s;
         }
 
-        .staff-feature-icon-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
+        .accent-bar-bottom {
+            width: 200px;
+            height: 2px;
+            top: 50%;
+            left: 10%;
+            animation: slideRight 7s infinite ease-in-out 2s;
         }
 
-        .staff-feature-icon {
-            font-size: 2.5rem;
-            color: #c00000;
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(192, 0, 0, 0.1), rgba(192, 0, 0, 0.05));
-            border-radius: 15px;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        @keyframes slideRight {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100vw);
+                opacity: 0;
+            }
         }
 
-        .staff-feature-card:hover .staff-feature-icon {
-            background: linear-gradient(135deg, #c00000, #8b0000);
-            color: white;
-            transform: rotate(360deg) scale(1.15);
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-100vw);
+                opacity: 0;
+            }
         }
 
-        .staff-feature-number {
-            font-family: 'Quicksand', sans-serif;
-            font-size: 2rem;
-            font-weight: 900;
-            color: #c00000;
-            transition: all 0.4s ease;
-        }
-
-        .staff-feature-card:hover .staff-feature-number {
-            color: #8b0000;
-            transform: scale(1.2);
-        }
-
-        .staff-feature-title {
-            font-family: 'Castoro', serif;
-            font-size: 1.5rem;
-            color: #222;
-            font-weight: 700;
-            margin-bottom: 15px;
-            transition: color 0.3s ease;
+        /* Content wrapper */
+        .hero-main {
             position: relative;
-            z-index: 5;
-        }
-
-        .staff-feature-card:hover .staff-feature-title {
-            color: #c00000;
-        }
-
-        .staff-feature-text {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #666;
-            transition: color 0.3s ease;
-            position: relative;
-            z-index: 5;
-        }
-
-        .staff-feature-card:hover .staff-feature-text {
-            color: #333;
-        }
-
-        /* Contact Section */
-        .staff-contact-section {
-            padding: 50px 0;
-            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .staff-contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 35px;
-            margin-top: 50px;
-        }
-
-        .staff-contact-card {
-            background: white;
-            padding: 50px 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            z-index: 3;
             text-align: center;
-            transition: all 0.4s ease;
-            border-left: 5px solid var(--primary-color);
-            position: relative;
-            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
         }
 
-        .staff-contact-card::before {
+        .hero-main h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 15px;
+            text-shadow: 0 8px 32px rgba(192, 0, 0, 0.4);
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Animated underline effect */
+        .hero-main h1::after {
             content: '';
             position: absolute;
-            top: 0;
-            right: -50px;
-            width: 100px;
-            height: 100px;
-            background: var(--primary-light);
-            border-radius: 50%;
-            opacity: 0;
-            transition: all 0.4s ease;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, transparent 0%, #c00000 50%, transparent 100%);
+            animation: expandWidth 2s ease infinite;
         }
 
-        .staff-contact-card:hover {
-            transform: translateY(-10px) scaleX(1.05);
-            box-shadow: 0 15px 40px rgba(192, 0, 0, 0.15);
+        @keyframes expandWidth {
+            0%, 100% {
+                width: 80px;
+                opacity: 0.5;
+            }
+            50% {
+                width: 150px;
+                opacity: 1;
+            }
         }
 
-        .staff-contact-card:hover::before {
-            right: -20px;
-            opacity: 0.5;
-        }
-
-        .staff-contact-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .staff-contact-card h3 {
-            font-family: 'Quicksand', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 0.8rem;
-        }
-
-        .staff-contact-card p {
-            color: var(--text-light);
-            font-size: 1.1rem;
+        .hero-main p {
+            font-size: 1.35rem;
+            font-weight: 300;
+            max-width: 650px;
+            margin: 0 auto;
             line-height: 1.7;
+            text-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+            letter-spacing: 0.5px;
+            margin-top: 30px;
         }
 
-        .staff-contact-card a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
+        /* Glow effect on text */
+        .glow-text {
+            position: relative;
+            color: #fff;
         }
 
-        .staff-contact-card a:hover {
-            text-decoration: underline;
+        .glow-text::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(192, 0, 0, 0.1) 0%, transparent 70%);
+            filter: blur(20px);
+            z-index: -1;
         }
 
-        /* Flip Animation */
-        @keyframes flipInX {
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: perspective(400px) rotateY(90deg);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
-                transform: perspective(400px) rotateY(0deg);
-            }
-        }
-
-        [data-aos="flip-left"] {
-            perspective: 1000px;
-        }
-
-        [data-aos="flip-left"].aos-animate {
-            animation: flipInX 0.8s ease both;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .staff-features-grid {
-                grid-template-columns: repeat(2, 1fr);
+                transform: translateY(0);
             }
         }
 
         @media (max-width: 768px) {
-            .staff-container {
-                padding: 0 20px;
+            .hero-main h1 {
+                font-size: 2.8rem;
             }
 
-            .staff-header h2 {
-                font-size: 2.2rem;
-                letter-spacing: 1px;
-            }
-
-            .staff-description {
+            .hero-main p {
                 font-size: 1rem;
             }
 
-            .staff-features-grid, .staff-contact-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
+            .hero-section::before {
+                background-attachment: scroll;
             }
 
-            .staff-feature-card {
-                padding: 40px 30px;
-            }
-
-            .staff-feature-card:hover {
-                transform: translateY(-15px) scale(1.02);
-            }
-
-            .staff-hero {
-                height: 350px;
-            }
-
-            .staff-hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .staff-hero-content p {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .staff-header h2 {
-                font-size: 1.8rem;
-            }
-
-            .staff-feature-card, .staff-contact-card {
-                padding: 30px 25px;
-            }
-
-            .staff-feature-icon {
-                font-size: 2rem;
-                width: 60px;
-                height: 60px;
-            }
-
-            .staff-feature-number {
-                font-size: 1.5rem;
+            .accent-bar {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg staff-navbar">
-        <div class="container-lg">
-            <a class="navbar-brand staff-brand" href="#">
-                <i class="bi bi-briefcase-fill"></i> TechMynds
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link staff-nav-link" href="#why-choose">Why Choose Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link staff-nav-link" href="#strengths">Our Strengths</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link staff-nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <!-- Animated lines -->
+        <div class="accent-bar accent-bar-top"></div>
+        <div class="accent-bar accent-bar-mid"></div>
+        <div class="accent-bar accent-bar-bottom"></div>
 
-    <section class="staff-hero" data-aos="fade" data-aos-duration="1000">
-        <div class="staff-hero-content">
-            <h1 data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">US Staffing</h1>
-            <p data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">Your trusted partner in finding the right talent for your business.</p>
-        </div>
-    </section>
-
-    <section class="staff-content-wrapper" id="why-choose">
-        <div class="staff-container">
-            <div class="staff-header" data-aos="fade-right" data-aos-duration="800">
-                <h2>Why Choose TechMynds for US Staffing?</h2>
-                <p class="staff-description" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">
-                    Recruiting for positions that demand exceptional skills and expertise can often feel like a daunting task. At TechMynds, we simplify the process with tailored staffing solutions designed for your business. Our dedicated team of specialists works tirelessly to connect you with top-tier professionals.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="staff-features-section" id="strengths">
-        <div class="staff-container">
-            <div class="staff-header" data-aos="fade-left" data-aos-duration="800">
-                <h2>Our Core Strengths</h2>
-            </div>
-            <div class="staff-features-grid">
-                <div class="staff-feature-card" data-aos="flip-left" data-aos-delay="0" data-aos-duration="900">
-                    <div class="staff-feature-icon-wrapper">
-                        <div class="staff-feature-icon">
-                            <i class="bi bi-briefcase"></i>
-                        </div>
-                        <div class="staff-feature-number">01</div>
-                    </div>
-                    <h3 class="staff-feature-title">Expertise Across Industries</h3>
-                    <p class="staff-feature-text">From technology and finance to healthcare and engineering, our recruiters bring specialized knowledge to connect businesses with the right professionals.</p>
-                </div>
-                <div class="staff-feature-card" data-aos="flip-left" data-aos-delay="150" data-aos-duration="900">
-                    <div class="staff-feature-icon-wrapper">
-                        <div class="staff-feature-icon">
-                            <i class="bi bi-lightning-charge"></i>
-                        </div>
-                        <div class="staff-feature-number">02</div>
-                    </div>
-                    <h3 class="staff-feature-title">Efficient Hiring Process</h3>
-                    <p class="staff-feature-text">Our streamlined recruitment process reduces time-to-hire and ensures you get the best candidates faster, without compromising on quality.</p>
-                </div>
-                <div class="staff-feature-card" data-aos="flip-left" data-aos-delay="300" data-aos-duration="900">
-                    <div class="staff-feature-icon-wrapper">
-                        <div class="staff-feature-icon">
-                            <i class="bi bi-bullseye"></i>
-                        </div>
-                        <div class="staff-feature-number">03</div>
-                    </div>
-                    <h3 class="staff-feature-title">Customized Solutions</h3>
-                    <p class="staff-feature-text">Every company is unique. We offer flexible staffing models, including contract, contract-to-hire, and permanent placements.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="staff-contact-section" id="contact">
-        <div class="staff-container">
-            <div class="staff-header" data-aos="fade-right" data-aos-duration="800">
-                <h2>Contact Our Staffing Team</h2>
-            </div>
-            <div class="staff-contact-grid">
-                <div class="staff-contact-card" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="800">
-                    <div class="staff-contact-icon">
-                        <i class="bi bi-envelope-at"></i>
-                    </div>
-                    <h3>Email</h3>
-                    <p>
-                        <a href="mailto:hr@techmyndsinc.com">hr@techmyndsinc.com</a>
-                    </p>
-                </div>
-                <div class="staff-contact-card" data-aos="zoom-in" data-aos-delay="150" data-aos-duration="800">
-                    <div class="staff-contact-icon">
-                        <i class="bi bi-telephone"></i>
-                    </div>
-                    <h3>Phone</h3>
-                    <p>
-                        <a href="tel:+17325876750">+1 (732) 587-6750</a>
-                    </p>
-                </div>
-                <div class="staff-contact-card" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="800">
-                    <div class="staff-contact-icon">
-                        <i class="bi bi-geo-alt"></i>
-                    </div>
-                    <h3>Location</h3>
-                    <p>1981 J N Pease Pl Ste 104<br>Charlotte, NC 28262</p>
-                </div>
-            </div>
+        <div class="hero-main">
+            <h1 data-aos="fade-up">Careers</h1>
+            <p class="glow-text" data-aos="fade-up" data-aos-delay="100">Be part of a team that's shaping the future of IT staffing & solutions.</p>
         </div>
     </section>
 
@@ -634,20 +260,9 @@
     <script>
         AOS.init({
             duration: 800,
-            easing: 'ease-in-out-cubic',
-            once: false,
-            mirror: true,
-            offset: 120
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.staff-navbar');
-            if (window.scrollY > 50) {
-                navbar.style.boxShadow = '0 4px 25px rgba(192, 0, 0, 0.15)';
-            } else {
-                navbar.style.boxShadow = '0 2px 15px rgba(192, 0, 0, 0.08)';
-            }
+            easing: 'ease-in-out',
+            once: true,
+            offset: 50
         });
     </script>
 </body>
