@@ -243,7 +243,7 @@
   display: none;
   padding: 80px 20px;
   background: var(--light-bg);
-  min-height: 80vh;
+  /* min-height: 80vh; */
 }
 
 .tab-content.active {
@@ -269,25 +269,10 @@
   position: relative;
 }
 
-.listings-title::after {
-  content: "";
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background: var(--accent-color);
-}
 
-#jobListingsContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-height: 750px;
-  overflow-y: auto;
-  padding-right: 12px;
-  scroll-behavior: smooth;
-}
+/* #jobListingsContainer {
+  margin: 25px 0;
+} */
 
 #jobListingsContainer::-webkit-scrollbar {
   width: 8px;
@@ -362,14 +347,14 @@
   gap: 10px;
 }
 
-.job-card-title::before {
+/* .job-card-title::before {
   content: "";
   width: 8px;
   height: 8px;
   background: var(--primary-color);
   border-radius: 50%;
   display: inline-block;
-}
+} */
 
 .job-card-info {
   font-size: 0.9rem;
@@ -402,15 +387,6 @@
   box-shadow: 0 4px 12px var(--shadow-primary);
 }
 
-.openings-badge::before {
-  content: "●";
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
 
 /* ================================
    JOB DETAILS PANEL - MODERN UI
@@ -445,7 +421,7 @@
   position: relative;
 }
 
-.details-header::after {
+/* .details-header::after {
   content: "";
   position: absolute;
   bottom: -3px;
@@ -453,7 +429,7 @@
   width: 80px;
   height: 3px;
   background: linear-gradient(90deg, var(--primary-color) 0%, var(--accent-color) 100%);
-}
+} */
 
 .details-header h3 {
   font-size: 1.5rem;
@@ -534,19 +510,20 @@
   letter-spacing: 0.5px;
 }
 
-.meta-label::before {
+/* .meta-label::before {
   content: "";
   width: 6px;
   height: 6px;
   background: var(--primary-color);
   border-radius: 50%;
-}
+} */
 
 .meta-value {
   color: var(--text-primary);
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.6;
+  text-align: justify;
 }
 
 .job-section {
@@ -575,16 +552,13 @@
   letter-spacing: 0.5px;
 }
 
-.job-section-label::before {
-  content: "◆";
-  font-size: 0.8rem;
-}
 
 .job-section-content {
   color: var(--text-secondary);
   line-height: 1.9;
   font-size: 0.95rem;
   font-weight: 400;
+  text-align: justify;
 }
 
 /* ================================
@@ -1157,12 +1131,15 @@ select.form-input:hover {
 
   .tabs-section {
     position: relative;
-    padding: 20px 15px;
+    padding: 15px 15px;
+    
   }
 
   .tabs-wrapper {
     flex-wrap: wrap;
     gap: 10px;
+    margin: 0;
+    justify-content: center;
   }
 
   .tab-btn {
@@ -1171,7 +1148,7 @@ select.form-input:hover {
   }
 
   .referral-header h2 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
 
   .referral-subtitle {
@@ -1179,7 +1156,7 @@ select.form-input:hover {
   }
 
   .referral-wrapper {
-    gap: 40px;
+    gap: 30px;
   }
 
   .referral-card {
@@ -1187,7 +1164,7 @@ select.form-input:hover {
   }
 
   .referral-card h3 {
-    font-size: 1.8rem;
+    font-size: 1rem;
   }
 
   .modal-content {
@@ -1213,11 +1190,11 @@ select.form-input:hover {
   }
 
   .listings-title {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   #jobListingsContainer {
-    max-height: 600px;
+    max-height: 1000px;
   }
 
   .job-listing-card {
@@ -1225,9 +1202,16 @@ select.form-input:hover {
   }
 
   .job-card-title {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+  } 
+  .details-header h3 {
+    font-size: 1.2rem;
   }
-}
+  .job-title-section h4 {
+    font-size: 1.2rem;
+  }
+
+} 
 
 @media (max-width: 600px) {
   .modal-content {
